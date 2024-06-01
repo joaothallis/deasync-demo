@@ -21,6 +21,11 @@ jobs:
         sparse-checkout: |
           random_number
 
+    - name: Install erlkaf dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install libsasl2-dev liblz4-dev libzstd-dev libcurl3-dev
+
     - uses: erlef/setup-beam@v1
       id: setup-beam
       with:
